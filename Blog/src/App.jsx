@@ -9,7 +9,7 @@ function App() {
   return (
 		<Div>
 			<div>123</div>
-			<i className="fa fa-calendar"  aria-hidden="true">Главная</i>
+			<i className="fa fa-calendar">Главная</i>
 		</Div>
 	)
 }
