@@ -1,0 +1,21 @@
+import styled from "styled-components";
+
+const ButtonContainer = ({ children, className, height, ...props }) => {
+	return (
+		<button className={className} {...props}>{children}</button>
+	)
+};
+
+export const Button = styled(ButtonContainer)`
+	width: 100%;
+	height: ${({height = '40px'}) => height};
+	color: #fff;
+	border: 1px solid #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 7px;
+	background-color: #000;
+	font-size: 25px;
+	cursor: pointer;
+`;
