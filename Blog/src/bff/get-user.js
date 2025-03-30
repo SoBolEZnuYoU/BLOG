@@ -1,8 +1,4 @@
-import { getUsers } from "./get-users";
-
-export const getUser = async (loginToFind) => {
-	const users = await getUsers()
-
-	return users.find((user) => user.login === loginToFind);
-}
-
+export const getUser = async (loginToFind) =>
+	fetch(`http://localhost:3001/users/?login=${loginToFind}`).then((userData) =>
+		userData.json(),
+	).then(([loadedUser]) => loadedUser)

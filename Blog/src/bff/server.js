@@ -1,5 +1,5 @@
 import { getUser } from './get-user';
-import { addUser } from './addUser';
+import { addUser } from './add-user';
 import { sessions } from './sessions';
 
 export const server = {
@@ -31,16 +31,16 @@ export const server = {
 		};
 	},
 	async register(regLogin, regPassword) {
-		const user = await getUser(regLogin);
+		const hasUser = await getUser(regLogin);
 
-		if (user) {
+		if (hasUser) {
 			return {
 				error: 'Пользователь с таким логином уже существует',
 				res: null,
 			};
 		}
 
-		await addUser(regLogin, regPassword);
+		const user = await addUser(regLogin, regPassword);
 
 		return {
 			error: null,
