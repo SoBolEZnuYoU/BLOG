@@ -10,7 +10,7 @@
 	- Комментарий: БД (список комментариев), store (отображение в браузере)
 
 Таблицы БД:
-	- пользователи - users: id / login / password / registed_at / role_id
+	- пользователи - users: id / login / password / registered_at / role_id
 	- роли - roles: id / name
 	- статьи - posts: id / title / image_url / content / published_at
 	- комментарии - comments: id / author_id / post_id / content

@@ -16,11 +16,9 @@ const RightAligned = styled.div`
 	gap: 24px;
 `;
 
-const StyledIcon = styled.div`
-	cursor: pointer;
-`;
 const StyledLink = styled(Link)`
 	color: #fff;
+	width: 100%;
 `;
 const UserName = styled.div`
 	display: flex;
@@ -31,8 +29,8 @@ const UserName = styled.div`
 	height: 40px;
 	font-weight: 700;
 	font-size: 25px;
-	letter-spacing: -3%
-`
+	letter-spacing: -3%;
+`;
 
 const ControlPanelContainer = ({ className }) => {
 	const navigate = useNavigate();
@@ -51,16 +49,15 @@ const ControlPanelContainer = ({ className }) => {
 				) : (
 					<UserName>
 						<div>{login}</div>
-						<StyledIcon onClick={() => dispatch(logout(session))}>
-							<Icon id="fa-sign-out" />
-						</StyledIcon>
+						<Icon
+							id="fa-sign-out"
+							onClick={() => dispatch(logout(session))}
+						/>
 					</UserName>
 				)}
 			</RightAligned>
 			<RightAligned>
-				<StyledIcon onClick={() => navigate(-1)}>
-					<Icon id="fa-backward" onClick={() => navigate(-1)} />
-				</StyledIcon>
+				<Icon id="fa-backward" onClick={() => navigate(-1)} />
 				<Link to="/post">
 					<Icon id="fa-file-text-o" />
 				</Link>

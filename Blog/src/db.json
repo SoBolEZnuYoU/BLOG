@@ -4,21 +4,14 @@
       "id": "001",
       "login": "Semen",
       "password": "qwerty123",
-      "registed_at": "2025-03-14",
+      "registered_at": "2025-03-14",
       "role_id": 0
     },
     {
       "id": "5b0b",
       "login": "Ivan",
       "password": "qwerty123",
-      "registed_at": "2024-10-17 22:31",
-      "role_id": 2
-    },
-    {
-      "id": "827a",
-      "login": "Vlad",
-      "password": "qwerty123",
-      "registed_at": "2029-03-19 11:59",
+      "registered_at": "2024-10-17 22:31",
       "role_id": 2
     }
   ],
