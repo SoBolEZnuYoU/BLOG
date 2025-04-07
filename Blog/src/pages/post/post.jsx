@@ -2,21 +2,25 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { Comments, PostContent } from './components';
+import {useServerRequest} from '../../hooks'
+import {loadPostAsync} from '../../actions'
+import { selectPost } from '../../selectors';
 import styled from 'styled-components';
 
 const PostContainer = ({ className }) => {
-	const post = useSelector(selector);
 	const dispatch = useDispatch();
 	const params = useParams()
+	const requestServer = useServerRequest()
+	const post = useSelector(selectPost);
 
 	useEffect(() => {
-		dispatch(loadPost(params.id));
-	}, []);
+		dispatch(loadPostAsync(requestServer, params.id));
+	}, [dispatch, params.id, requestServer]);
 
 	return (
 		<div className={className}>
-			<PostContent />
-			<Comments />
+			<PostContent post={post} />
+			<Comments comments={post.comments} />
 		</div>
 	);
 };
