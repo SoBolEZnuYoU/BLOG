@@ -9,7 +9,7 @@ const ButtonContainer = ({ children, className, ...props }) => {
 };
 
 export const Button = styled(ButtonContainer)`
-	width: 100%;
+	width: ${({width = '100%'}) => width};
 	height: ${({ height = '40px' }) => height};
 	color: #fff;
 	border: 1px solid #000;
