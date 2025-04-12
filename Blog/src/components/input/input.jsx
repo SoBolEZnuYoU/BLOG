@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const InputContainer = ({className, width, ...props}) => {
+const InputContainer = ({className, ...props}) => {
 	return (
 		<input className={className} {...props} />
 	)
