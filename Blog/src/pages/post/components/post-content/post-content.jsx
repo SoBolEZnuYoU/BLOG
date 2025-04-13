@@ -5,17 +5,24 @@ import styled from 'styled-components';
 
 const PostContentContainer = ({
 	className,
-	post: {id, title, imageUrl, content, publishedAt },
+	post: { id, title, imageUrl, content, publishedAt },
 }) => {
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	return (
 		<div className={className}>
 			<img src={imageUrl} alt={title}></img>
 			<h2>{title}</h2>
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
-				actionButton={<Icon id="fa-pencil-square-o" size="23px" onClick={() => navigate(`/post/${id}/edit`)}/>}
+				actionButton={
+					<Icon
+						id="fa-pencil-square-o"
+						size="23px"
+						onClick={() => navigate(`/post/${id}/edit`)}
+					/>
+				}
 			/>
 			<div className="post-text">{content}</div>
 		</div>
