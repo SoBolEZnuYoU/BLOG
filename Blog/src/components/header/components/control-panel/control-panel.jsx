@@ -18,8 +18,13 @@ const RightAligned = styled.div`
 
 const StyledLink = styled(Link)`
 	color: #fff;
+	background-color: #000;
+	height: 100%;
+	border-radius: 7px;
+	padding-top: 3px;
 	width: 100%;
 `;
+
 const UserName = styled.div`
 	display: flex;
 	justify-content: right;

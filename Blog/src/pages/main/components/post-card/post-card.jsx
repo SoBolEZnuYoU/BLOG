@@ -35,7 +35,7 @@ const PostCardContainer = ({
 export const PostCard = styled(PostCardContainer)`
 	width: 379px;
 	border: 2px solid #1c1c1c;
-	font-size: 24px;
+	font-size: 22px;
 
 	img {
 		border-bottom: 2px solid #1c1c1c;
