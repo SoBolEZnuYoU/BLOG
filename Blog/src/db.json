@@ -177,17 +177,5 @@
       "content": "dhfhfdhsdsfhdf"
     }
   ],
-  "sessions": [
-    {
-      "id": "ea5f",
-      "hash": "0.58604461779356786799155543121742084622383117675781",
-      "user": {
-        "id": "001",
-        "login": "Semen",
-        "password": "qwerty123",
-        "registeredAt": "2025-03-14",
-        "roleId": 0
-      }
-    }
-  ]
+  "sessions": []
 }
