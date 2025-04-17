@@ -11,12 +11,14 @@ const MainContainer = ({ className }) => {
 	const [lastPage, setLastPage] = useState(1);
 	const [searchPhrase, setSearchPhrase] = useState('');
 	const [shouldSearch, setShouldSearch] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const requestServer = useServerRequest();
 
 	useEffect(() => {
 		requestServer('fetchPosts', searchPhrase, page, PAGINATION_LIMIT).then(
 			({ res: { posts, links } }) => {
 				setPosts(posts);
+				setIsLoading(false);
 				setLastPage(getLastPageFromLinks(links));
 			},
 		);
@@ -29,6 +31,10 @@ const MainContainer = ({ className }) => {
 		setSearchPhrase(target.value);
 		startDelayedSearch(!shouldSearch);
 	};
+
+	if (isLoading) {
+		return null;
+	}
 
 	return (
 		<div className={className}>
@@ -49,7 +55,7 @@ const MainContainer = ({ className }) => {
 			) : (
 				<div className="no-posts-found">Статьи не найдены</div>
 			)}
-			{ lastPage > 1 && posts.length > 0 && (
+			{lastPage > 1 && posts.length > 0 && (
 				<Pagination
 					setPage={setPage}
 					lastPage={lastPage}

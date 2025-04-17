@@ -12,14 +12,14 @@ export const sessions = {
 		const session = await getSession(hash);
 
 		if (!session) {
-			return
+			return;
 		}
 
-		deleteSession(session.id)
+		deleteSession(session.id);
 	},
 	async access(hash, accessRoles) {
 		const session = await getSession(hash);
 
-		return !!session.user && accessRoles.includes(session.user.roleId);
+		return !!session?.user && accessRoles.includes(session.user.roleId);
 	},
 };

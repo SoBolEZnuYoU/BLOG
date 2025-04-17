@@ -5,14 +5,12 @@ const Div = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-`
+	gap: 40px;
+`;
 
-export const Content = ({ children, error }) =>
-	error ? (
-		<Div>
-			<H2>Ошибка</H2>
-			<div>{error}</div>
-		</Div>
-	) : (
-		children
-	);
+export const Error = ({ error }) => (
+	<Div>
+		<H2>Ошибка</H2>
+		<div>{error}</div>
+	</Div>
+);

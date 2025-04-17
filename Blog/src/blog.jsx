@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { Header, Footer, Modal } from './components';
-import { Authorization, Registration, Users, Post, Main } from './pages';
 import { useLayoutEffect } from 'react';
-import { setUser } from './actions';
 import { useDispatch } from 'react-redux';
+import { Header, Footer, Modal, Error } from './components';
+import { Authorization, Registration, Users, Post, Main } from './pages';
+import { setUser } from './actions';
+import { ERROR } from './constants';
 import styled from 'styled-components';
 
 const AppColumn = styled.div`
@@ -30,7 +31,7 @@ export const Blog = () => {
 			return;
 		}
 
-		const currentUserData = JSON.parse(currentUserDataJSON)
+		const currentUserData = JSON.parse(currentUserDataJSON);
 
 		dispatch(
 			setUser({
@@ -52,7 +53,10 @@ export const Blog = () => {
 					<Route path="/post/:id" element={<Post />} />
 					<Route path="/post/:id/edit" element={<Post />} />
 					<Route path="/post" element={<Post />} />
-					<Route path="*" element={<div>Ошибка</div>} />
+					<Route
+						path="*"
+						element={<Error error={ERROR.PAGE_NOT_EXIST} />}
+					/>
 				</Routes>
 			</Page>
 			<Footer />
